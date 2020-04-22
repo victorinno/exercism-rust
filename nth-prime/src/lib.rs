@@ -1,5 +1,5 @@
 pub fn is_prime(n: u32) -> bool {
-    ! (2..n).any(|i| n % i == 0)
+    !(2..n).any(|i| n % i == 0)
 }
 
 pub fn nth(n: u32) -> u32 {
@@ -9,4 +9,3 @@ pub fn nth(n: u32) -> u32 {
     };
     return r.unwrap();
 }
-
