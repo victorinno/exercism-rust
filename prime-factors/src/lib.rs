@@ -1,7 +1,4 @@
 pub fn factors(n: u64) -> Vec<u64> {
-    if n == 1 {
-        return Vec::new();
-    }
     let mut dividend: u64 = n;
     let mut factors: Vec<u64> = Vec::new();
     let mut prime_divisor: u64 = 2;
