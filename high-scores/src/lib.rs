@@ -26,23 +26,7 @@ impl HighScores {
         self.scores_sorted.last().cloned()
     }
 
-    pub fn reverse_ordered_list(&self) -> Vec<u32> {
-        let mut v: Vec<u32> = self.scores_sorted.clone();
-        v.reverse();
-        v
-    }
-
-    pub fn reverse_ordered_list_from_vec(original: &Vec<u32>) -> Vec<u32> {
-        let mut v: Vec<u32> = original.clone();
-        v.reverse();
-        v
-    }
-
     pub fn personal_top_three(&self) -> Vec<u32> {
-        match self.scores().len() {
-            0 => Vec::new(),
-            _x if _x >= 1 && _x <= 3 => HighScores::reverse_ordered_list(self),
-            x => HighScores::reverse_ordered_list_from_vec(self.scores_sorted[(x - 3)..].to_vec().as_ref()),
-        }
+        self.scores_sorted.clone().into_iter().rev().take(3).collect::<Vec<u32>>()
     }
 }
