@@ -5,3 +5,10 @@ version = "1.6.0"
 
 [dependencies]
 regex = "1"
+criterion = "0.1.2"
+gnuplot = "0.0.35"
+plotters = "^0.2.14"
+
+[[bench]]
+name = "bob_benchmark"
+harness = false
